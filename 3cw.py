@@ -1,6 +1,6 @@
 import random
 class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
+    def __init__(self, name="Human", job=None, home=None, car=None, pet=None):
         self.name = name
         self.money = 100
         self.gladness = 50
@@ -8,6 +8,7 @@ class Human:
         self.job = job
         self.car = car
         self.home = home
+        self.pet = pet
 
     def get_home(self):
         self.home = House()
@@ -15,6 +16,8 @@ class Human:
     def get_car(self):
         self.car = Auto(brands_of_car)
 
+    def get_pet(self):
+        self.car = pet(kinds_of_pets)
 
     def get_job(self):
         if self.car.drive():
@@ -120,6 +123,12 @@ class Human:
         if self.car is None:
             self.get_car()
             print(f"I bought a car{self.car.brand}")
+
+        if self.pet is None:
+            self.get_pet()
+            print(f"To one I'm bored, I need to get a pet. "
+                  f"{self.pet.pet} with salary {self.pet.kinds}")
+
         if self.job is None:
             self.get_job()
             print(f"I don't have a job, I'm going to get a job "
@@ -162,18 +171,38 @@ brands_of_car = {
     "Suzuki":{"fuel":70, "strength":150, "consumption": 8},
     "Lamborghini":{"fuel":80, "strength":120, "consumption": 14} }
 
+kinds_of_pets = {
+    "Dog":{"hunger":80, "sleep":100},
+    "Cat":{"hunger":50, "sleep":40},
+    "Tiger":{"hunger":100, "sleep":150},
+    "Monkey":{"hunger":55, "sleep":120} }
 
 class Auto:
     def __init__(self, brand_list):
-        self.brand=random.choice(list (brand_list))
+        self.brand=random.choice(list (kinds_of_pets))
         self.fuel=brand_list[self.brand]["fuel"]
         self.strength = brand_list[self.brand]["strength"]
         self.consumption=brand_list[self.brand]["consumption"]
+
+    class Pet:
+        def __init__(self, pets_list):
+            self.kinds = random.choice(list(brand_list))
+            self.hunger = pets_list[self.kinds]["hunger"]
+            self.sleep = pets_list[self.kinds]["sleep"]
 
     def drive(self):
         if self.strength > 0 and self.fuel >= self.consumption:
             self.fuel -= self.consumption
             self.strength -= 1
+            return True
+        else:
+            print("The car cannot move")
+            return False
+
+    def pets(self):
+        if self.strength > 0 and self.fuel > 0:
+            self.hunger -= self.sleep
+            self.sleep-= 1
             return True
         else:
             print("The car cannot move")
