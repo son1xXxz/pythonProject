@@ -205,7 +205,7 @@ class Auto:
             self.sleep-= 1
             return True
         else:
-            print("The car cannot move")
+            print("Pet are die :(")
             return False
 
 class House:
