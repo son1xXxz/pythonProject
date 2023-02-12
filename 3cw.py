@@ -157,10 +157,10 @@ class Human:
             self.shopping(manage="delicacies")
 
 brands_of_car = {
-    "BMW":{"fuel":100, "strength":100, "consumption": 6},
-    "Lada":{"fuel":50, "strength":40, "consumption": 10},
-    "Volvo":{"fuel":70, "strength":150, "consumption": 8},
-    "Ferrari":{"fuel":80, "strength":120, "consumption": 14} }
+    "Daewoo Lanos":{"fuel":100, "strength":100, "consumption": 6},
+    "Mercedes-Benz":{"fuel":50, "strength":40, "consumption": 10},
+    "Suzuki":{"fuel":70, "strength":150, "consumption": 8},
+    "Lamborghini":{"fuel":80, "strength":120, "consumption": 14} }
 
 
 class Auto:
