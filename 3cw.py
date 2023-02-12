@@ -185,13 +185,13 @@ class House:
         self.food = 0
 
 job_list = {
- "Java developer":
+ "Hockey player":
                 {"salary":50, "gladness_less": 10 },
  "Python developer":
                 {"salary":40, "gladness_less": 3 },
- "C++ developer":
+ "Factory worker":
                 {"salary":45, "gladness_less": 25 },
- "Rust developer":
+ "Cyber athlete":
                 {"salary":70, "gladness_less": 1 },
  }
 
